@@ -52,15 +52,15 @@ export default function Quiz() {
             }
 
             let expression = "";
-            let useParentheses = Math.random() < 0.5; // Randomly decide if we use parentheses
-            let useBrackets = Math.random() < 0.5; // Randomly decide if we use brackets
+            const useParentheses = Math.random() < 0.5; // Randomly decide if we use parentheses
+            const useBrackets = Math.random() < 0.5; // Randomly decide if we use brackets
 
             if ((useParentheses || useBrackets) && numbers.length >= 3) {
-                let groupStart = Math.floor(Math.random() * (numCount - 1)); // Start of grouping
-                let groupEnd = Math.floor(Math.random() * (numCount - groupStart - 1)) + groupStart + 1; // End of grouping
+                const groupStart = Math.floor(Math.random() * (numCount - 1)); // Start of grouping
+                const groupEnd = Math.floor(Math.random() * (numCount - groupStart - 1)) + groupStart + 1; // End of grouping
                 
-                let openingSymbol = useParentheses ? "(" : "[";
-                let closingSymbol = useParentheses ? ")" : "]";
+                const openingSymbol = useParentheses ? "(" : "[";
+                const closingSymbol = useParentheses ? ")" : "]";
 
                 for (let i = 0; i < numbers.length; i++) {
                     if (i === groupStart) expression += openingSymbol; // Open grouping
@@ -86,13 +86,13 @@ export default function Quiz() {
             }
 
             // Convert square brackets to parentheses for eval()
-            let evalExpression = expression.replace(/\[/g, "(").replace(/\]/g, ")");
+            const evalExpression = expression.replace(/\[/g, "(").replace(/\]/g, ")");
 
             let answer: number;
             try {
                 answer = eval(evalExpression);
                 if (evalExpression.includes("/")) answer = parseFloat(answer.toFixed(2));
-            } catch (error) {
+            } catch (_) {
                 answer = NaN; // Handle any unexpected eval errors
             }
             return {question: expression, answer};
