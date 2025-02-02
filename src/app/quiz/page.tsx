@@ -92,7 +92,7 @@ export default function Quiz() {
             try {
                 answer = eval(evalExpression);
                 if (evalExpression.includes("/")) answer = parseFloat(answer.toFixed(2));
-            } catch (_) {
+            } catch {
                 answer = NaN; // Handle any unexpected eval errors
             }
             return {question: expression, answer};
