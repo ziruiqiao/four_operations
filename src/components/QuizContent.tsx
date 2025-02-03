@@ -13,7 +13,7 @@ export default function QuizContent() {
     const router = useRouter();
     const numQuestions = Number(searchParams.get("num")) || 10;
     const maxNum = Number(searchParams.get("max")) || 10;
-    const minNum = Number(searchParams.get("min")) || -10;
+    const minNum = Number(searchParams.get("min")) || 0;
     const numOfNumber = Number(searchParams.get("num_of_num")) || 2;
 
     const [questions, setQuestions] = useState<Question[]>([]);
