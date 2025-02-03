@@ -24,7 +24,7 @@ export default function Home() {
                     Number of Quesitons: 
                 </label>
                 <input 
-                    type="number" min="1" max="50" value={numQuestions === null ? "" : numQuestions}
+                    type="string" min="1" max="50" value={numQuestions === null ? "" : numQuestions}
                     onChange={(e) => setNumQuestions(Number(e.target.value))}
                     className="border border-gray-300 p-2 rounded w-full"
                 />
@@ -33,13 +33,13 @@ export default function Home() {
                 </label>
                 <div className="flex-row">
                     <input 
-                        type="number" value={minNum === null ? "" : minNum}
+                        type="string" value={minNum === null ? "" : minNum}
                         onChange={(e) => setMinNum(Number(e.target.value))}
                         className="border border-gray-300 p-2 rounded w-1/5"
                     />
                     &nbsp;&nbsp;-&nbsp;&nbsp;
                     <input 
-                        type="number" value={maxNum === null ? "" : maxNum}
+                        type="string" value={maxNum === null ? "" : maxNum}
                         onChange={(e) => setMaxNum(Number(e.target.value))}
                         className="border border-gray-300 p-2 rounded w-1/5"
                     />
@@ -48,7 +48,7 @@ export default function Home() {
                     Number of Numbers: 
                 </label>
                 <input 
-                    type="number" min="2" max="10" value={numOfNumber === null ? "" : numOfNumber}
+                    type="string" min="2" max="10" value={numOfNumber === null ? "" : numOfNumber}
                     onChange={(e) => setNumOfNumber(Number(e.target.value))}
                     className="border border-gray-300 p-2 rounded w-full"
                 />
